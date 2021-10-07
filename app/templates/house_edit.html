@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Edit grade: {{ house.colour }}</h2>
+<ul class="errors">
+{% for field, errors in form.errors.items() %}
+    <li>
+        {{ form[field].label }}: {{ ', '.join(errors) }}
+    </li>
+{% endfor %}
+</ul>
+<form method="POST">
+    
+    {{ form.csrf_token }}
+
+    {{ form.colour.label(class='form-label') }}
+    {{ form.colour(class='form-control') }}
+
+    <div class="form-check my-2">
+        {{ form.active.label(class='form-check-label') }}
+        {{ form.active(class='form-check-input') }}
+    </div>
+
+    {{ form.submit(class='btn btn-primary my-2') }}
+
+</form>
+{% endblock %}

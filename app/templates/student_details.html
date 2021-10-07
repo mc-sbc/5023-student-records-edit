@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Student details</h2>
+<div class="row">
+    <div class="col-3">
+        <b>Name:</b>
+        <p>{{ student.name }}</p>
+    </div>
+    <div class="col-3">
+        <b>Grade:</b>
+        <p>{{ student.grade.name }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <b>House colour:</b>
+        <p>{{ student.house.colour }}</p>
+    </div>
+    <div class="col-3">
+        <b>English mark:</b>
+        <p>{{ student.english_mark }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <b>Science mark:</b>
+        <p>{{ student.science_mark }}</p>
+    </div>
+    <div class="col-3">
+        <b>Mathematics mark:</b>
+        <p>{{ student.mathematics_mark }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <b>Does homework?</b>
+        <p>{% if student.does_homework %} Yes {% else %} No {% endif %}</p>
+    </div>
+    <div class="col-3">
+        <b>Stays on task?</b>
+        <p>{% if student.stays_on_task %} Yes {% else %} No {% endif %}</p>
+    </div>
+</div>
+<a class="btn btn-primary" href="{{ url_for('student_edit', id=student.id) }}">Edit student</a>
+{% endblock %}

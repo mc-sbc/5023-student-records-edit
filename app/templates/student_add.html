@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Enter student marks</h2>
+<ul class="errors">
+{% for field, errors in form.errors.items() %}
+    <li>
+        {{ form[field].label }}: {{ ', '.join(errors) }}
+    </li>
+{% endfor %}
+</ul>
+<form method="POST">
+    {{ form.csrf_token }}
+
+    {{ form.name.label }}
+    {{ form.name }}
+
+    {{ form.grade_id.label }}
+    {{ form.grade_id }}
+
+    {{ form.house_id.label }}
+    {{ form.house_id }}
+
+    <h3>Subjects</h3>
+
+    {{ form.english_mark.label }}
+    {{ form.english_mark }}
+
+    {{ form.science_mark.label }}
+    {{ form.science_mark }}
+
+    {{ form.mathematics_mark.label }}
+    {{ form.mathematics_mark }}
+
+    <h3>Behaviours</h3>
+
+    {{ form.does_homework.label }}
+    {{ form.does_homework }}
+    
+    {{ form.stays_on_task.label }}
+    {{ form.stays_on_task }}
+
+    {{ form.submit() }}
+
+</form>
+{% endblock %}
