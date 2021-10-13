@@ -11,35 +11,36 @@
 <form method="POST">
     {{ form.csrf_token }}
 
-    {{ form.name.label }}
-    {{ form.name }}
+    {{ form.name.label(class='form-label') }}
+    {{ form.name(class='form-control') }}
 
-    {{ form.grade_id.label }}
-    {{ form.grade_id }}
+    {{ form.grade_id.label(class='form-label') }}
+    {{ form.grade_id(class='form-control') }}
 
-    {{ form.house_id.label }}
-    {{ form.house_id }}
+    {{ form.house_id.label(class='form-label') }}
+    {{ form.house_id(class='form-control') }}
 
     <h3>Subjects</h3>
 
-    {{ form.english_mark.label }}
-    {{ form.english_mark }}
+    {{ form.english_mark.label(class='form-label') }}
+    {{ form.english_mark(class='form-control') }}
 
-    {{ form.science_mark.label }}
-    {{ form.science_mark }}
+    {{ form.science_mark.label(class='form-label') }}
+    {{ form.science_mark(class='form-control') }}
 
-    {{ form.mathematics_mark.label }}
-    {{ form.mathematics_mark }}
+    {{ form.mathematics_mark.label(class='form-label') }}
+    {{ form.mathematics_mark(class='form-control') }}
 
     <h3>Behaviours</h3>
-
-    {{ form.does_homework.label }}
-    {{ form.does_homework }}
+    <div class="form-check my-2">
+        {{ form.does_homework.label(class='form-check-label') }}
+        {{ form.does_homework(class='form-check-input') }}
+        <br>
+        {{ form.stays_on_task.label(class='form-check-label') }}
+        {{ form.stays_on_task(class='form-check-input') }}
+    </div>
     
-    {{ form.stays_on_task.label }}
-    {{ form.stays_on_task }}
-
-    {{ form.submit() }}
-
+    {{ form.submit(class='btn btn-primary my-2') }}
+    
 </form>
 {% endblock %}

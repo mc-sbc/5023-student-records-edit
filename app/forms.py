@@ -15,6 +15,8 @@ class AddStudentForm(FlaskForm):
     submit = SubmitField('Add student')
 
 # TODO: Add a form for editing the student (called EditStudentForm), which inherits from AddStudentForm
+class EditStudentForm(AddStudentForm):
+    submit = SubmitField('Save changes')
 
 class AddGradeForm(FlaskForm):
     name = StringField('Grade name', validators=[InputRequired()])
